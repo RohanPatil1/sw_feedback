@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
+import 'package:launch_review/launch_review.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -48,6 +50,7 @@ class _FeedBackPageState extends State<FeedBackPage> {
             style: TextStyle(
               color: Colors.white,
               fontFamily: "Quicksand",
+              fontWeight: FontWeight.bold
             ),
           ),
         ),
@@ -63,9 +66,9 @@ class _FeedBackPageState extends State<FeedBackPage> {
                 height: 150.0,
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 38.0),
+                padding: const EdgeInsets.only(top: 28.0),
                 child: Text(
-                  "We Would Like To\n Hear From You!",
+                  "We Would Love To\n Hear From You!",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: Colors.white,
@@ -105,7 +108,13 @@ class _FeedBackPageState extends State<FeedBackPage> {
                             fontFamily: "Quicksand"),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      //Go to PlayStore or AppStore
+                      LaunchReview.launch(
+                          androidAppId: "com.android.chrome",
+                          iOSAppId: "585027354");
+
+                    },
                     color: Colors.redAccent,
                     shape: RoundedRectangleBorder(
                         borderRadius: new BorderRadius.circular(30.0))),
